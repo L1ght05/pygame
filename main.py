@@ -1,14 +1,14 @@
+# main.py
 """
-Snake Game - Main Launcher
-Automatically runs Stage 4 only.
+Snake Game — Main Entry Point
 """
 
-import stage4_full_game
+from stage4_full_game import run_game
 
 
 def main():
-    print("Running Stage 4...")
-    stage4_full_game.run_stage4()
+    print("Launching Snake Game...")
+    run_game()
 
 
 if __name__ == "__main__":

@@ -1,27 +1,23 @@
+# scoreboard.py
 import pygame
-from settings import WHITE, WINDOW_WIDTH
+from settings import WHITE
 
 
 class Scoreboard:
-    def __init__(self, font_size=36):
-        """Initialize the scoreboard."""
+    def __init__(self, font_size=36, position=(10, 10)):
         self.score = 0
         self.font = pygame.font.SysFont(None, font_size)
-        self.position = (10, 10)  # Top-left corner
+        self.position = position
 
     def draw(self, screen):
-        """Draw the current score on the screen."""
-        score_text = self.font.render(f"Score: {self.score}", True, WHITE)
-        screen.blit(score_text, self.position)
+        text = self.font.render(f"Score: {self.score}", True, WHITE)
+        screen.blit(text, self.position)
 
     def increment_score(self):
-        """Increase the score by 1."""
         self.score += 1
 
     def reset_score(self):
-        """Reset the score to 0."""
         self.score = 0
 
     def get_score(self):
-        """Return the current score."""
         return self.score
